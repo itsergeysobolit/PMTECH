@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header, .sidebar__left, .sidebar__right, .footer {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+}
+
+.sidebar__left, .sidebar__right {
+    margin: -1px 0;
+}
+
+.header, .footer {
+    min-height: 15vh;
+}
+
+.main {
+    display: flex;
+    min-height: 70vh;
+}
+
+.main>.sidebar__left, .main>.sidebar__right {
+    flex: 0 0 15vw;
+}
+
+.main>.content {
+    flex: 1;
+}
+
+@media screen and (max-width: 575px) {
+    .main {
+        flex-direction: column;
+    }
+    .content {
+        border: 1px solid #000000;
+    }
+}
