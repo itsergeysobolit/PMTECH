@@ -1,0 +1,273 @@
+@import config
+@import _hamburger
+
+.container
+    max-width: 1140px
+    padding-right: 7.5px
+    padding-left: 7.5px
+    margin: 0 auto
+    position: relative
+
+.wobbler
+    position: absolute
+    z-index: 50
+    left: 10px
+    top: -4px
+    margin-right: 2px
+    width: 32px
+    height: 32px
+    color: #fff
+    line-height: 32px
+    text-align: center
+    display: inline-block
+    font-style: normal
+    border-radius: 3px 3px 0 0
+    text-transform: uppercase
+    &::after
+        display: block
+        content: ""
+        width: 0
+        height: 0
+        border-left: 16px solid transparent
+        border-right: 16px solid transparent
+
+.arrows
+    display: flex
+    .arrow-left, .arrow-right
+        width: 30px
+        height: 30px
+        border-radius: 50%
+        border: #dbdee6 2px solid
+        background: url(../images/src/arrow-left.svg) center center no-repeat
+        transition: .3s
+        &:hover
+            border-color: #FF5E1E
+    .arrow-right
+        margin-left: 10px
+        background-image: url(../images/src/arrow-right.svg)
+
+.card
+    width: 233px
+    margin: 0 15px
+    position: relative
+    border: 1px solid #dbdee6
+    border-radius: 10px
+    display: flex
+    align-items: center
+    flex-direction: column
+    padding: 0 15px
+    transition: .3s
+    &:hover
+        border-color: #FF5E1E
+    &__picture
+        padding-top: 33px
+    &__name
+        padding-top: 36px
+        color: #4673AB
+        font-weight: 700
+        transition: .3s
+        &:hover
+            color: #FF5E1E
+    &__price
+        padding-top: 23px
+        width: 100%
+
+        .price__info
+            font-size: 13px
+            color: #1A2222
+            text-align: center
+
+        .price
+            font-size: 20px
+            font-weight: 700
+
+        .old__price
+            color: #FF5816
+            text-decoration: line-through
+
+    &__buy
+        padding-top: 14px
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+    &__btn
+        display: block
+        text-decoration: none
+        font-size: 14px
+        line-height: 16px
+        color: #ffffff
+        background: #ff5816 url(../images/src/cart.svg) no-repeat 15% center
+        border-radius: 5px
+        border-bottom: #c44817 3px solid
+        padding: 10px 16px 10px 40px
+        outline: 0
+        text-transform: uppercase
+        cursor: pointer
+        transition: .3s
+        &:hover
+            background-color: #4673ab
+            border-bottom-color: #133e74
+    &__more
+        font-size: 13px
+        padding-left: 5px
+    &__title
+        padding-top: 23px
+        color: #4673AB
+        font-weight: 700px
+        transition: .3s
+        &:hover
+            color: #FF5816
+    &__banner
+        padding-top: 15px
+        img
+            width: 245px
+    &__description
+        padding: 17px 15px 0
+        font-size: 13px
+    &__countdown
+        padding-top: 50px
+    & > :last-child
+        padding-bottom: 20px
+.stock__card
+    width: 245px
+    padding: 0
+
+// .header
+//     position: fixed
+//     z-index: 200
+//     width: 100vw
+//     top: 0
+//     background-color: #000000
+//     height: 40px
+
+.header
+    background-color: #000000
+
+    &__list
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        padding: 13px 0
+
+    &__item
+        display: inline-block
+        border-right: 1px dotted#323232
+        &:last-child
+            border-right: 0
+
+    &__link
+        margin: 0 20px
+        font-size: 13px
+        color: #BDC3C5
+        text-decoration: none
+        cursor: pointer
+        transition: .3s
+        &:hover
+            opacity: .8
+
+.nav
+
+    &__list
+        background-color: #FF5816
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        justify-content: space-evenly
+        box-shadow: inset 0 -3px 0 0 #c44411
+        border-radius: 8px
+
+    &__item
+        display: inline-block
+        font-size: 12px
+        border-radius: 8px
+        &:hover
+            background-color: #ff8352
+            text-decoration: underline
+        &:last-child
+            border-right: 0
+
+    &__link
+        color: #fff
+        font-weight: 300
+        font-size: 80%
+        text-transform: uppercase
+        display: block
+        padding: 10px
+        vertical-align: middle
+        height: 100%
+        text-decoration: none
+        cursor: default
+
+.news, .recommendation, .sale, .stock
+    margin-top: 40px
+    .box
+        margin-top: 30px
+        display: flex
+        &::before
+            content: ''
+            cursor: pointer
+            display: flex
+            height: 43px
+            align-self: center
+            width: 16px
+            background-image: url(../images/dest/arrow-slider-left.svg)
+            background-repeat: no-repeat
+        &::after
+            content: ''
+            cursor: pointer
+            display: flex
+            height: 43px
+            align-self: center
+            width: 16px
+            background-image: url(../images/dest/arrow-slider-right.svg)
+            background-repeat: no-repeat
+
+    .wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .all
+            font-size: 13px
+
+    &__title
+        font-size: 22px
+        text-transform: uppercase
+        font-weight: 500
+
+    &__wobbler
+        background: #42c16c
+        font-size: 12px
+        font-weight: 500
+        &::after
+            border-top: 10px solid #42c16c
+
+.recommendation
+    &__wobbler
+        background: #F7C159
+        font-size: 30px
+        &::after
+            border-top: 10px solid #F7C159
+
+.sale
+    &__wobbler
+        background: #499AD9
+        font-size: 40px
+        &::after
+            border-top: 10px solid #499AD9
+
+.footer
+    color: #c8d4dc
+    background-color: #5c7489
+    padding: 40px 0
+    .wrap
+        display: flex
+        justify-content: space-between
+
+    .about__text
+        margin-top: 30px
+
+.second__footer
+    background-color: #2c3f53
+    padding: 20px 0
+@import media

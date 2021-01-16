@@ -1,0 +1,45 @@
+// USER VARIABLES SECTION
+
+$accent: #D2E1FF // Accent Color
+$fontsize: 16px // Body Font Size
+$textcolor: #040d0d // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$roboto: Roboto, sans-serif // Roboto Font Family
+
+@import 'https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css' // Reset styles
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		// font-display: swap // Uncomment to initially display system fonts
+		src: local($fname), url($furl) format('woff2')
+
+@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $roboto
+	font-size: $fontsize
+	position: relative
+	// line-height: 1.65
+	overflow-x: hidden
+	color: $textcolor
